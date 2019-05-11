@@ -24,9 +24,12 @@ class _HomeState extends State<Home>{
       ],
     );
 
+    Icon icon = Icon(Icons.wb_sunny, size: 120, color: Colors.yellow,);
+
     Column column = Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
+        icon,
 
       ],
     );
