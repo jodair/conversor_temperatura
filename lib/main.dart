@@ -24,8 +24,17 @@ class _HomeState extends State<Home>{
       ],
     );
 
+    Column column = Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: <Widget>[
+
+      ],
+    );
+
     Scaffold scaffold = Scaffold(
       appBar: appBar,
+      backgroundColor: Colors.white,
+      body: column,
     );
 
     return scaffold;
