@@ -26,10 +26,33 @@ class _HomeState extends State<Home>{
 
     Icon icon = Icon(Icons.wb_sunny, size: 120, color: Colors.yellow,);
 
+    TextStyle styleDecoration = TextStyle(color: Colors.blueAccent, fontSize: 20);
+    TextStyle styleField = TextStyle(color: Colors.blueAccent);
+
+    TextField tempCelsius = TextField(
+      keyboardType: TextInputType.number,
+      decoration: InputDecoration(
+        labelText: "Temperatura em graus Celsius",
+        labelStyle: styleDecoration,
+      ),
+      textAlign: TextAlign.center,
+      style: styleField,
+    );
+    
+    TextField tempFahrenheit = TextField(
+      keyboardType: TextInputType.number,
+      decoration: InputDecoration(
+        labelText: "Temperatura em graus Fahrenheit",
+        labelStyle: styleDecoration,
+      ),
+      textAlign: TextAlign.center,
+      style: styleField,
+    );
+
     Column column = Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
-        icon,
+        icon, tempCelsius, tempFahrenheit,
 
       ],
     );
