@@ -57,13 +57,14 @@ class _HomeState extends State<Home>{
         if(_formKey.currentState.validate()){
           _converter();
         }
+        FocusScope.of(context).requestFocus(FocusNode());
       },
       child: Text("calcular"),
       color: Colors.blueAccent,
     );
 
     Container containerBtn = Container(
-      height: 200.0,
+      height: 50.0,
       child: raisedButton,
     );
 
@@ -75,8 +76,10 @@ class _HomeState extends State<Home>{
     TextFormField tempCelsius = TextFormField(
       keyboardType: TextInputType.number,
       decoration: InputDecoration(
-        labelText: "Temperatura em graus Celsius",
-        labelStyle: styleDecoration,
+        labelText: "Graus Celsius",
+        labelStyle: TextStyle(color: Colors.black, fontSize: 20),
+        border: OutlineInputBorder(),
+        suffixText: "°C",
       ),
       textAlign: TextAlign.center,
       style: styleField,
@@ -89,26 +92,24 @@ class _HomeState extends State<Home>{
     );
 
     TextFormField tempFahrenheit = TextFormField(
+      enabled: false,
       keyboardType: TextInputType.number,
       decoration: InputDecoration(
-        labelText: "Temperatura em graus Fahrenheit",
-        labelStyle: styleDecoration,
+        labelText: "Graus Fahrenheit",
+        labelStyle: TextStyle(color: Colors.black, fontSize: 20),
+        border: OutlineInputBorder(),
+        suffixText: "°F",
       ),
       textAlign: TextAlign.center,
       style: styleField,
       controller: fahrenheitController,
-      validator: (value){
-        if(value.isEmpty){
-          return "Informe um valor";
-        }
-      },
     );
 
     Column column = Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
         //icon, tempCelsius, tempFahrenheit, padding,
-        imgLogo, tempCelsius, tempFahrenheit, padding,
+        imgLogo, tempCelsius, Divider(), tempFahrenheit, padding,
 
       ],
     );
